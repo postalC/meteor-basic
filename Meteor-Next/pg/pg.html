@@ -1,0 +1,39 @@
+<head>
+  <title>Play Ground</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Text Circle</a>
+      <p class="navbar-text navbar-right">
+        <a href="#" class="navbar-link">{{> loginButtons align="right"}}</a>
+      </p>
+    </div>
+  </nav>
+
+  <!-- {{> display_date}} -->
+  <div class="container top-margin">
+    <div class="row">
+      <div class="col-md-6">
+          {{> editor}}
+      </div>
+      <div class="col-md-6">
+        {{> viewer}}
+      </div>
+    </div>
+  </div>
+</body>
+
+<!-- <template name="display_date">
+  {{current_date}}
+</template> -->
+
+<template name="editor">
+  {{>sharejsCM docid=docId onRender=config id="editor2"}}
+</template>
+
+<template name="viewer">
+  <iframe id="viewer_iframe">
+  </iframe>
+</template>

@@ -1,0 +1,22 @@
+<head>
+  <title>my_first_app</title>
+</head>
+
+<body>
+  <h1>Hello from Singapore</h1>
+    {{> getDate}}
+  <img src="sg.png"
+  alt="Greeting from Singapore" />
+
+  <p> </p>
+    {{> hello}}
+</body>
+
+<template name="getDate">
+  <p><strong>The time now is: {{current_date}}</strong></p>
+</template>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
