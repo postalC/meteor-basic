@@ -1,0 +1,33 @@
+<!-- Top level template for the chat page -->
+<template name="chat_page">
+  <div class="row">
+    <div class="col-xs-5 col-sm-5">
+      <h4>You're talking to:</h4>
+      <img src="/{{myavatar}}" class="avatar_img" />
+    </div>
+    <div class="col-xs-5 col-sm-5">
+      <div class="otheruser">
+        {{#with otheruser}}
+        <h4><em>{{profile.username}}</em></h4>
+        <img src="/{{profile.avatar}}" class="avatar_img" /> {{/with}}
+      </div>
+    </div>
+    <!-- / chat user -->
+    <div class="col-xs-10 col-sm-10">
+      <div class="well well-lg">
+        {{#each messages}} {{> chat_message}} {{/each}}
+      </div>
+    </div>
+    <!-- / chat message -->
+  </div>
+  <div class="row">
+    <div class="col-xs-10 col-sm-10 ">
+      <form class="js-send-chat">
+        <div class="form-group">
+          <textarea class="form-control" type="text" name="chat" placeholder="type a message here..."></textarea>
+        </div>
+        <button class="btn btn-primary btn-block">Send</button>
+      </form>
+    </div>
+  </div>
+</template>

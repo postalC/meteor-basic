@@ -1,7 +1,3 @@
-/**
- * Meteor Client JS
- */
-
 // set up the main template the the router will use to build pages
 Router.configure({
   layoutTemplate: 'ApplicationLayout'

@@ -2,20 +2,23 @@
  * Meteor Client Chat Page Template JS
  */
 Template.chat_page.helpers({
-  chatusers: function() {
+  myavatar: function() {
+    return Meteor.users.findOne({
+      _id: Meteor.userId()
+    }).profile.avatar;
+  },
+  otheruser: function() {
     var chat = Chats.findOne({
       _id: Session.get("chatId")
     });
-    user1 = Meteor.users.findOne({
-      _id: chat.user1Id
+    if (chat.user1Id != Meteor.userId()) {
+      var otherUser = chat.user1Id;
+    } else {
+      var otherUser = chat.user2Id;
+    }
+    return Meteor.users.findOne({
+      _id: otherUser
     });
-    user2 = Meteor.users.findOne({
-      _id: chat.user2Id
-    });
-    return [
-      user1,
-      user2
-    ];
   },
   messages: function() {
     var chat = Chats.findOne({
