@@ -2,6 +2,21 @@
  * Meteor Client Chat Page Template JS
  */
 Template.chat_page.helpers({
+  chatusers: function() {
+    var chat = Chats.findOne({
+      _id: Session.get("chatId")
+    });
+    user1 = Meteor.users.findOne({
+      _id: chat.user1Id
+    });
+    user2 = Meteor.users.findOne({
+      _id: chat.user2Id
+    });
+    return [
+      user1,
+      user2
+    ];
+  },
   messages: function() {
     var chat = Chats.findOne({
       _id: Session.get("chatId")
