@@ -1,5 +1,26 @@
 /* CSS declarations go here */
 
+.navbar-default {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color:#7986CB;
+}
+
+.jumbotron {
+    padding:70px 30px 70px 30px;
+    margin:0px auto;
+    background: #7986CB ;
+    color:floralwhite;
+}
+
+body{
+    padding:10px 0px 0px 0px;
+    z-index:0;
+}
+
 .user_avatar{
 	min-height:100px;
 	text-align: center;
@@ -33,4 +54,9 @@
 
 img.emoji {
   width: 1.5em;
+}
+
+
+.emoji-icon {
+  background-color: lightgrey;
 }

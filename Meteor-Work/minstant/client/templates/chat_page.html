@@ -1,7 +1,7 @@
 <!-- Top level template for the chat page -->
 <template name="chat_page">
   <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-5">
+    <div class="col-xs-6 col-sm-6 col-md-5 col-md-offset-1">
       <h4>You're talking to:</h4>
       <img src="/{{loginUseravatar}}" class="login_avatar_chat_img" />
     </div>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <!-- / chat user -->
-    <div class="col-xs-12 col-sm-12 col-md-10">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
       <div class="well well-lg">
         {{#each messages}} {{> chat_message}} {{/each}}
       </div>
@@ -24,7 +24,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-10">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
       <form class="js-send-chat">
         <div class="form-group">
           <textarea class="form-control" type="text" id="chat" name="chat" placeholder="type a message here..."></textarea>
@@ -35,7 +35,7 @@
   </div>
   <br>
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-10" role="group">
+    <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 emoji-icon" role="group">
       <em class="info">select the emoji by click on it..</em>
       {{#emoji}}
       <ol class="js-emoji-icon pagination">
