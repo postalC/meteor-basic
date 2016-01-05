@@ -9,7 +9,12 @@
 	height:75px;
 }
 
-.avatar_chat_img{
+.login_avatar_chat_img {
+	height:35px;
+	text-align: center;
+}
+
+.otheruser_avatar_chat_img{
 	height:50px;
 }
 
@@ -24,4 +29,8 @@
 .otheruser_chat_log{
 	color: blue;
 	text-align:right;
+}
+
+img.emoji {
+  width: 1.5em;
 }

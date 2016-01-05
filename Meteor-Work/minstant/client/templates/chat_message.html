@@ -4,12 +4,13 @@
     {{#if loginUser userId}}
     <div class="login_chat_log">
       <span class="text-muted">[{{formatDate timeStamp}}]</span>
-      <span class="bold"> You: </span>{{text}}
+      <span class="bold"> You: </span>{{#emoji}}{{text}}{{/emoji}}
       <br>
     </div>
     {{else}}
     <div class="otheruser_chat_log">
-      {{text}}<span class="bold"> :{{getUsername userId}} </span>
+      <p> </p>
+      {{#emoji}}{{text}}{{/emoji}} <span class="bold"> :{{getUsername userId}} </span>
       <span class="text-muted">[{{formatDate timeStamp}}]</span>
       <br>
     </div>

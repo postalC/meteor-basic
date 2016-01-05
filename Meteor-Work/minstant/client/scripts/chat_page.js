@@ -2,7 +2,7 @@
  * Meteor Client Chat Page Template JS
  */
 Template.chat_page.helpers({
-  myavatar: function() {
+  loginUseravatar: function() {
     return Meteor.users.findOne({
       _id: Meteor.userId()
     }).profile.avatar;
@@ -31,23 +31,33 @@ Template.chat_page.helpers({
   },
 })
 
+/////////
+/// EVENTS
+////////
 Template.chat_page.events({
   // this event fires when the user sends a message on the chat page
-  'submit .js-send-chat': function(event) {
+  "submit .js-send-chat": function(event) {
     // stop the form from triggering a page reload
     event.preventDefault();
 
-    Meteor.call("saveMessage", Session.get("chatId"), event.target.chat.value, function(err, chat) {
-      if (err) { // error
-        console.log("ERROR: saveMessage, " + err);
-      } else {
-        if (chat) { // ok - we have a chat to use
-          // reset the form
-          event.target.chat.value = "";
+    Meteor.call("saveMessage", Session.get("chatId"), event.target.chat.value,
+      function(err, chat) {
+        if (err) { // error
+          console.log("ERROR: saveMessage, " + err);
         } else {
-          console.log("ERROR: saveMessage, chat is undefined.");
+          if (chat) { // ok - we have a chat to use
+            // reset the form
+            event.target.chat.value = "";
+          } else {
+            console.log("ERROR: saveMessage, chat is undefined.");
+          }
         }
-      }
-    });
-  }
+      });
+  },
+  // this event trigger when the user click the emoji icon --
+  "click .js-emoji-icon": function(event) {
+    // console.log($(event.target).attr("alt"));
+    //console.log(document.getElementById("chat").value);
+    document.getElementById("chat").value += $(event.target).attr("alt");
+  },
 })
