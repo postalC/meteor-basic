@@ -8,7 +8,7 @@ Template.available_user.helpers({
     });
     return user.profile.username;
   },
-  isMyUser: function(userId) {
+  loginUser: function(userId) {
     if (userId == Meteor.userId()) {
       return true;
     } else {

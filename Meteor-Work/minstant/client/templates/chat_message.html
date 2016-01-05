@@ -1,8 +1,18 @@
 <!-- simple template that displays a message -->
 <template name="chat_message">
-  <div>
-    <span class="text-muted">{{timeStamp}}</span>
-    <span class="bold">todo</span> said: {{text}}
-    <br>
+  <div class="chat_room">
+    {{#if loginUser userId}}
+    <div class="login_chat_log">
+      <span class="text-muted">[{{formatDate timeStamp}}]</span>
+      <span class="bold"></span> You: {{text}}
+      <br>
+    </div>
+    {{else}}
+    <div class="otheruser_chat_log">
+      <span class="bold"></span> {{text}} :{{getUsername userId}}
+      <span class="text-muted">[{{formatDate timeStamp}}]</span>
+      <br>
+    </div>
+    {{/if}}
   </div>
 </template>

@@ -50,7 +50,9 @@ Template.chat_page.events({
       // (i.e. the user) into the database?? certainly not.
       // push adds the message to the end of the array
       msgs.push({
-        text: event.target.chat.value
+        userId: Meteor.userId(),
+        text: event.target.chat.value,
+        timeStamp: new Date()
       });
       // reset the form
       event.target.chat.value = "";

@@ -9,7 +9,19 @@
 	height:75px;
 }
 
+.avatar_chat_img{
+	height:50px;
+}
+
 .otheruser{
 	text-align:right;
-		height:75px;
+}
+
+.login_chat_log{
+	color: green;
+}
+
+.otheruser_chat_log{
+	color: blue;
+	text-align:right;
 }
