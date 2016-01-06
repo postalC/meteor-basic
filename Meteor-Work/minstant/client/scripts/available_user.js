@@ -8,11 +8,4 @@ Template.available_user.helpers({
     });
     return user.profile.username;
   },
-  loginUser: function(userId) {
-    if (userId == Meteor.userId()) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 })

@@ -1,9 +1,22 @@
 <!-- display a list of users -->
 <template name="available_user_list">
-	<h2>Choose someone to chat with:</h2>
-	<div class="row">
-	{{#each users}}
-	 {{> available_user}}
-	{{/each}}
-</div>
+	<div class="container-fluid content-body">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-6">
+				{{#with loginUser}}
+				<div class="">
+					<h3>Welcome back, {{username}}</h3>
+					<img src="/{{profile.avatar}}" class="login_avatar_list_img">
+				</div>
+				{{/with}}
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+				<p><b><i>Choose someone to chat with:</i></b></p>
+				{{#each otherUsers}}
+				{{> available_user}}
+				{{/each}}
+			</div>
+		</div>
 </template>

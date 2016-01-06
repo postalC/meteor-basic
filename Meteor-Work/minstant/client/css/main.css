@@ -21,8 +21,8 @@ body{
     z-index:0;
 }
 
-.user_avatar{
-	min-height:100px;
+.login_avatar_list_img {
+	max-height:100px;
 	text-align: center;
 
 }
@@ -52,10 +52,14 @@ body{
 	text-align:right;
 }
 
+.system_chat_log{
+	color: CC3333;
+	text-align:left;
+}
+
 img.emoji {
   width: 1.5em;
 }
-
 
 .emoji-icon {
   background-color: lightgrey;

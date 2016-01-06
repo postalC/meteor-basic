@@ -15,6 +15,7 @@ Meteor.startup(function() {
         "creating a user with password 'test123' and username/ email: " +
         email);
       Meteor.users.insert({
+        username: username,
         profile: {
           username: username,
           avatar: avatar

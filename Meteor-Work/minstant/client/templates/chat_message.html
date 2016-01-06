@@ -7,13 +7,18 @@
       <span class="bold"> You: </span>{{#emoji}}{{text}}{{/emoji}}
       <br>
     </div>
-    {{else}}
+    {{else}} {{#if otherUser userId}}
     <div class="otheruser_chat_log">
-      <p> </p>
-      {{#emoji}}{{text}}{{/emoji}} <span class="bold"> :{{getUsername userId}} </span>
+      {{#emoji}}{{text}}{{/emoji}}
+      <span class="bold"> :{{getUsername userId}} </span>
       <span class="text-muted">[{{formatDate timeStamp}}]</span>
       <br>
     </div>
-    {{/if}}
+    {{else}}
+    <div class="text-muted system_chat_log">
+      Minstant Team ;-) {{#emoji}}{{text}}{{/emoji}}
+      <br>
+    </div>
+    {{/if}} {{/if}}
   </div>
 </template>

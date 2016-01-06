@@ -12,6 +12,13 @@ Template.chat_message.helpers({
       return false;
     }
   },
+  otherUser: function(userId) {
+    if (userId != 100) {
+      return true;
+    } else {
+      return false;
+    }
+  },
   getUsername: function(userId) {
     user = Meteor.users.findOne({
       _id: userId
