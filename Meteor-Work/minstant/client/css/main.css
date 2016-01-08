@@ -1,66 +1,58 @@
 /* CSS declarations go here */
 
 .navbar-default {
-    background-color: #F8F8F8;
-    border-color: #E7E7E7;
+  background-color: #F8F8F8;
+  border-color: #E7E7E7;
 }
+
 /* title */
+
 .navbar-default .navbar-brand {
-    color:#7986CB;
+  color: #7986CB;
 }
-
 .jumbotron {
-    padding:70px 30px 70px 30px;
-    margin:0px auto;
-    background: #7986CB ;
-    color:floralwhite;
+  padding: 70px 30px 70px 30px;
+  margin: 0px auto;
+  background: #7986CB;
+  color: floralwhite;
 }
 
-body{
-    padding:10px 0px 0px 0px;
-    z-index:0;
+.row-content {
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    border-bottom: 1px ridge;
 }
 
 .login_avatar_list_img {
-	max-height:100px;
-	text-align: center;
-
+  max-height: 100px;
 }
-.avatar_img{
-	height:75px;
+.avatar_img {
+  height: 75px;
 }
-
 .login_avatar_chat_img {
-	height:35px;
-	text-align: center;
+  height: 35px;
+  text-align: center;
 }
-
-.otheruser_avatar_chat_img{
-	height:50px;
+.otheruser_avatar_chat_img {
+  height: 50px;
 }
-
-.otheruser{
-	text-align:right;
+.otheruser {
+  text-align: right;
 }
-
-.login_chat_log{
-	color: green;
+.login_chat_log {
+  color: green;
 }
-
-.otheruser_chat_log{
-	color: blue;
-	text-align:right;
+.otheruser_chat_log {
+  color: blue;
+  text-align: right;
 }
-
-.system_chat_log{
-	color: CC3333;
-	text-align:left;
+.system_chat_log {
+  color: CC3333;
+  text-align: left;
 }
-
 img.emoji {
   width: 1.5em;
 }
-
 .emoji-icon {
   background-color: lightgrey;
 }

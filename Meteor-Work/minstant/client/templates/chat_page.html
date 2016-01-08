@@ -25,26 +25,19 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
-      <form class="js-send-chat">
-        <div class="form-group">
-          <textarea class="form-control" type="text" id="chat" name="chat" placeholder="type a message here..."></textarea>
-        </div>
-        <button class="btn btn-primary btn-block">Send</button>
-      </form>
+      <button class="btn btn-primary js-show-emoji-model">{{#emoji}} Add emoji :smile: {{/emoji}}</button>
+      {{> emoji_modal}}
     </div>
   </div>
   <br>
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 emoji-icon" role="group">
-      <em class="info">select the emoji by click on it..</em>
-      {{#emoji}}
-      <ol class="js-emoji-icon pagination">
-        {{#each emojiList}}
-        <li>:{{this}}:</li>
-        {{/each}}
-      </ol>
-      {{/emoji}}
+    <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+      <form class="js-send-chat">
+        <div class="form-group">
+          <textarea class="form-control js-textarea" type="text" id="chat-textarea" name="chat" placeholder="type a message here...and enter to send..." rows="4" cols="50" autofocus="true"></textarea>
+        </div>
+        <button class="btn btn-primary js-submit-btn">Send</button>
+      </form>
     </div>
   </div>
-  <!-- / emoji -->
 </template>

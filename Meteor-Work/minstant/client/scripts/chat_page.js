@@ -31,10 +31,24 @@ Template.chat_page.helpers({
   },
 })
 
+Template.chat_page.rendered = function() {
+  document.getElementById("chat-textarea").focus();
+};
+
 /////////
 /// EVENTS
 ////////
 Template.chat_page.events({
+  "keypress .js-textarea": function(event) {
+    // ENTER
+    if (event.which === 13) {
+      //console.log("keypress == enter");
+      $(".js-submit-btn").click();
+    }
+  },
+  "click .js-show-emoji-model": function(event) {
+    $("#emoji_modal").modal('show');
+  },
   // this event fires when the user sends a message on the chat page
   "submit .js-send-chat": function(event) {
     // stop the form from triggering a page reload
@@ -58,6 +72,7 @@ Template.chat_page.events({
   "click .js-emoji-icon": function(event) {
     // console.log($(event.target).attr("alt"));
     //console.log(document.getElementById("chat").value);
-    document.getElementById("chat").value += $(event.target).attr("alt");
+    document.getElementById("chat-textarea").value += $(event.target).attr(
+      "alt");
   },
 })

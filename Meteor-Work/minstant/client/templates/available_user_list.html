@@ -1,22 +1,28 @@
 <!-- display a list of users -->
 <template name="available_user_list">
-	<div class="container-fluid content-body">
-		<div class="row">
-			<div class="col-xs-12 col-sm-8 col-md-6">
-				{{#with loginUser}}
-				<div class="">
-					<h3>Welcome back, {{username}}</h3>
-					<img src="/{{profile.avatar}}" class="login_avatar_list_img">
+	<div class="container">
+		<div class="container-fluid content-body">
+			<div class="row row-content">
+				<div class="col-xs-8 col-sm-6">
+					{{#with loginUser}}
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">Welcome Back</h3>
+						</div>
+						<div class="panel-body">
+							<dl class="dl-horizontal">
+								<dt><img src="/{{profile.avatar}}" class="media-object img-circle login_avatar_list_img" draggable="false"></dt>
+								<dd><b>{{username}}</b></dd>
+							</dl>
+						</div>
+					</div>
+					{{/with}}
 				</div>
-				{{/with}}
 			</div>
-		</div>
-		<hr>
-		<div class="row">
+			<div class="row row-content">
 				<p><b><i>Choose someone to chat with:</i></b></p>
-				{{#each otherUsers}}
-				{{> available_user}}
-				{{/each}}
+				{{#each otherUsers}} {{> available_user}} {{/each}}
 			</div>
 		</div>
+	</div>
 </template>

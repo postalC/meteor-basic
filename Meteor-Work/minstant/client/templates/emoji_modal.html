@@ -1,0 +1,30 @@
+<!-- Emoji Modal page -->
+<template name="emoji_modal">
+  <div class="modal fade" id="emoji_modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title">
+          </div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <label class="info">
+              <em>select the emoji by click on it..</em>
+            </label>
+            <button class="btn btn-primary pull-right js-emoji-done" data-dismiss="modal">Done</button>
+            {{#emoji}}
+            <ol class="js-emoji-icon pagination">
+              {{#each emojiList}}
+              <li>:{{this}}:</li>
+              {{/each}}
+            </ol>
+            {{/emoji}}
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
