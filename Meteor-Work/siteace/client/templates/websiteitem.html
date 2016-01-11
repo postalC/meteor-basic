@@ -1,0 +1,25 @@
+<!-- template that displays individual website entries -->
+<template name="websiteitem">
+  <li>
+    <a href="{{url}}">
+      <strong>{{title}}</strong>
+    </a>
+    <p>
+      {{description}}
+    </p>
+    <a href="#" class="btn btn-success btn-sm js-upvote">
+      <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+    </a>
+    <label class="vote-label" for="upvote-count">
+      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+    </label>
+    <a href="#" class="btn btn-danger btn-sm js-downvote">
+      <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+    </a>
+    <label class="vote-label" for="downvote-count">
+      <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+    </label>
+    <hr>
+    <!-- you will be putting your up and down vote buttons in here! -->
+  </li>
+</template>

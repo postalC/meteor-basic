@@ -1,0 +1,20 @@
+<!-- Top level template for the content page -->
+<template name="contentpage">
+  <div class="row row-content">
+    <div class="col-xs-8 col-sm-6">
+      {{#with loginUser}}
+      <h3 class="welcome-title">Welcome Back
+        <em>{{username}}</em>
+      </h3>
+      {{/with}}
+    </div>
+    <div class="col-xs-2 col-sm-4">
+    </div>
+    <div class="col-xs-2 col-sm-2">
+      {{> websiteform}}
+    </div>
+  </div>
+  <div class="row row-content">
+    {{> websitelist}}
+  </div>
+</template>

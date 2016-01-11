@@ -12,11 +12,11 @@ Router.route('/', function() {
   });
   // -- Check if user login --
   if (Meteor.user()) {
-    route.render("lobby_page", {
+    route.render("contentpage", {
       to: "main"
     });
   } else {
-    route.render("landing_page", {
+    route.render("landingpage", {
       to: "main"
     });
   }

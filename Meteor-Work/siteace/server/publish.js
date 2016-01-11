@@ -13,5 +13,4 @@ Meteor.publish("usersData", function() {
 // -- websites listing --
 Meteor.publish("websitesList", function() {
   return Websites.find();
-  // TODO: return all for now
 });

@@ -10,7 +10,7 @@
 }
 
 .jumbotron {
-  padding: 20px 30px 20px 30px;
+  padding: 30px 30px 30px 30px;
   margin: 0px auto;
   background: #7986CB;
   color: floralwhite;
@@ -20,6 +20,15 @@
     margin:0px auto;
     padding: 20px 0px 20px 0px;
     border-bottom: 1px ridge;
+}
+
+.welcome-title {
+  margin:0px auto;
+  padding: 0px 0px 0px 0px;
+}
+
+.vote-label {
+  padding-right: 30px;
 }
 
 .hidden_div{
