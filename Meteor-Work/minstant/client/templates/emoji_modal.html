@@ -5,6 +5,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <div class="modal-title">
+            <button class="btn btn-primary pull-right js-emoji-done" data-dismiss="modal">Done</button>
           </div>
         </div>
         <div class="modal-body">
@@ -12,7 +13,6 @@
             <label class="info">
               <em>select the emoji by click on it..</em>
             </label>
-            <button class="btn btn-primary pull-right js-emoji-done" data-dismiss="modal">Done</button>
             {{#emoji}}
             <ol class="js-emoji-icon pagination">
               {{#each emojiList}}
@@ -21,8 +21,6 @@
             </ol>
             {{/emoji}}
           </div>
-        </div>
-        <div class="modal-footer">
         </div>
       </div>
     </div>
