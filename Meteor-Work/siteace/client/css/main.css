@@ -1,0 +1,27 @@
+/* CSS declarations go here */
+.navbar-default {
+  background-color: #F8F8F8;
+  border-color: #E7E7E7;
+}
+
+/* title */
+.navbar-default .navbar-brand {
+  color: #7986CB;
+}
+
+.jumbotron {
+  padding: 20px 30px 20px 30px;
+  margin: 0px auto;
+  background: #7986CB;
+  color: floralwhite;
+}
+
+.row-content {
+    margin:0px auto;
+    padding: 20px 0px 20px 0px;
+    border-bottom: 1px ridge;
+}
+
+.hidden_div{
+	display:none;
+}

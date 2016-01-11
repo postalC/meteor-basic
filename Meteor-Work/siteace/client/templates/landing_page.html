@@ -1,0 +1,29 @@
+<template name="landing_page">
+  <!-- Start Header -->
+  <header class="jumbotron">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="container">
+      <div class="row row-header">
+        <div class="col-xs-12 col-sm-8">
+          <h1>Awesome Website</h1>
+          <p style="padding:20px;"></p>
+          <p>You're now just a few clicks away from completing your registration.</p>
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <p style="padding:20px;"></p>
+          <img src="/logo.png" class="img-rounded img-responsive" draggable="false">
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- / Header -->
+
+  <body>
+    <div class="row row-content">
+      <h3>Top 5</h3>
+      <ol>
+        {{#each topfive}} {{>website_top5}} {{/each}}
+      </ol>
+    </div>
+  </body>
+</template>
