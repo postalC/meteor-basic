@@ -11,7 +11,7 @@ Template.websiteform.events({
     // stop the form from triggering a page reload
     event.preventDefault();
     // here is an example of how to get the url out of the form:
-    var url = event.target.url.value;
+    var url = event.target.url.value.toLowerCase();
     var title = event.target.title.value;
     if (!title) {
       title = url;

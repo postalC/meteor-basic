@@ -32,17 +32,17 @@
 
 
 
-<template name="editor">  
+<template name="editor">
       {{>sharejsCM docid=docid onRender=config id="editor" mode="javascript"}}
 </template>
 
 
-<template name="viewer">  
+<template name="viewer">
   <iframe id="viewer_iframe">
   </iframe>
 </template>
 
-<template name="docMeta"> 
+<template name="docMeta">
   {{#with document}}
   <span class="h1"> {{> editableText collection="documents" field="title"}}</span>
   {{#if canEdit}}
@@ -56,11 +56,11 @@
   {{/with}}
 </template>
 
-<template name="editingUsers"> 
+<template name="editingUsers">
   Editors:
   {{#each users}}
   <span class="label label-success">{{firstname}} </span>
-   
+
   {{/each}}
 </template>
 
@@ -92,6 +92,3 @@
     <button type="submit" class="btn btn-primary">Insert</button>
   {{/autoForm}}
 </template>
-
-
-

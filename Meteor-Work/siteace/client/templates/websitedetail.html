@@ -1,0 +1,77 @@
+<!-- template that displays individual website details -->
+<template name="websitedetail">
+  <div class="col-sm-10">
+    {{#with website}}
+    <div class="row">
+      <h2>{{title}}</h2>
+      <label> Website URL:
+        <a href="{{url}}">
+          <strong>{{url}}</strong>
+        </a>
+      </label>
+      <br>
+      <label> Description:
+      </label>
+      <p>
+        {{description}}
+      </p>
+    </div>
+    <div class="row">
+      <label class="vote-label" for="upvote-count"> {{voteUp}}
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+      </label>
+      <label class="vote-label" for="downvote-count"> {{voteDown}}
+        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+      </label>
+    </div>
+    <div class="row">
+      <p>
+        <small>
+          <em>Created On: {{createdOn}}</em>
+          <br>
+          <em>Created By: {{username createdBy}}</em>
+        </small>
+      </p>
+    </div>
+    <br>
+<h3>Comments History:</h3>
+     {{#each comments}}
+    <div class="row">
+      <div class="col-xs-hidden col-sm-4">
+        <strong>By: {{username createdBy}}</strong>
+        <br>
+        <small>
+          <em>{{createdOn}}</em>
+        </small>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <strong>{{title}}</strong>
+        <p>{{details}}</p>
+      </div>
+    </div>
+    <hr> {{/each}} {{/with}}
+
+    <div class="row">
+      <form class="form-horizontal js-comment-save" role="form">
+        <h3>Comments:</h3>
+        <div class="form-group">
+          <label for="title" class="col-sm-2 control-label">Title</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="title" placeholder="Brief Description">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="details" class="col-sm-2 control-label">Description</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="details" placeholder="I found this site really useful for ..." required>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>

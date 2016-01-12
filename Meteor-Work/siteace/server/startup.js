@@ -10,7 +10,7 @@
 				voteUp: 0,
 				voteDown: 0,
 				comments: [],
-				createdBy: 100,
+				createdBy: "system",
 				createdOn: new Date()
 			});
 			Websites.insert({
@@ -20,7 +20,7 @@
 				voteUp: 0,
 				voteDown: 0,
 				comments: [],
-				createdBy: 100,
+				createdBy: "system",
 				createdOn: new Date()
 			});
 			Websites.insert({
@@ -30,7 +30,7 @@
 				voteUp: 0,
 				voteDown: 0,
 				comments: [],
-				createdBy: 100,
+				createdBy: "system",
 				createdOn: new Date()
 			});
 			Websites.insert({
@@ -40,7 +40,7 @@
 				voteUp: 0,
 				voteDown: 0,
 				comments: [],
-				createdBy: 100,
+				createdBy: "system",
 				createdOn: new Date()
 			});
 		}

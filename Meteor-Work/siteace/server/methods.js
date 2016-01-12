@@ -15,12 +15,81 @@ Meteor.methods({
   },
   // -- Get All --
   getAll: function() {
-    var result = Websites.find({}, {
-      sort: {
-        voteUp: -1
+    if (this.userId) { // we have a user
+      var result = Websites.find({}, {
+        sort: {
+          voteUp: -1
+        }
+      }).fetch();
+      return result;
+    }
+  },
+  // -- Get User Name by Id --
+  getUsername: function(id) {
+    if (this.userId) { // we have a user
+      var result = Meteor.users.findOne({
+        _id: id
+      });
+      return result.username;
+    }
+  },
+  // -- Get Particular Website by Id --
+  getWebSite: function(id) {
+    if (this.userId) { // we have a user
+      var result = Websites.findOne({
+        _id: id
+      });
+      return result;
+    }
+  },
+  // adding new comments
+  saveComment: function(inTitle, inDetail, id) {
+    if (this.userId) { // we have a user
+      var result = Websites.findOne({
+        _id: id
+      });
+      if (result) { // ok - we have the website to use
+        var comment = {
+          title: inTitle,
+          details: inDetail,
+          createdBy: this.userId,
+          createdOn: new Date()
+        };
+        result.comments.push(comment);
+        // update the website object in the database.
+        var update = Websites.update({
+          _id: id
+        }, result);
+        return update;
       }
-    }).fetch();
-    return result;
+      return;
+    }
+  },
+  // -- Save Up Vote --
+  saveUpVote: function(id) {
+    if (this.userId) { // we have a user
+      var result = Websites.findOne({
+        _id: id
+      });
+      result.voteUp += 1;
+      var update = Websites.update({
+        _id: id
+      }, result);
+      return update;
+    }
+  },
+  // -- Save Down Vote --
+  saveDownVote: function(id) {
+    if (this.userId) { // we have a user
+      var result = Websites.findOne({
+        _id: id
+      });
+      result.voteDown += 1;
+      var update = Websites.update({
+        _id: id
+      }, result);
+      return update;
+    }
   },
   // -- Save WebSite --
   saveWebsite: function(inUrl, inTitle, inDesc) {

@@ -1,4 +1,4 @@
 /**
-* -- Meteor DB colelctions --
-*/
+ * -- Meteor DB colelctions --
+ */
 Websites = new Mongo.Collection("websites");

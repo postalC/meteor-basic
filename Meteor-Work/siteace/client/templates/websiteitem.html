@@ -6,20 +6,24 @@
     </a>
     <p>
       {{description}}
+      <br>
+      <small>
+        <em>Created On: {{createdOn}}</em>
+      </small>
     </p>
     <a href="#" class="btn btn-success btn-sm js-upvote">
       <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
     </a>
-    <label class="vote-label" for="upvote-count">
+    <label class="vote-label" for="upvote-count"> {{voteUp}}
       <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
     </label>
     <a href="#" class="btn btn-danger btn-sm js-downvote">
       <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
     </a>
-    <label class="vote-label" for="downvote-count">
+    <label class="vote-label" for="downvote-count"> {{voteDown}}
       <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
     </label>
+      <a class="btn btn-primary btn-xs" href="/website/{{_id}}">More &raquo;</a>
     <hr>
-    <!-- you will be putting your up and down vote buttons in here! -->
   </li>
 </template>

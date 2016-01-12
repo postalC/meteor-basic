@@ -21,3 +21,15 @@ Router.route('/', function() {
     });
   }
 });
+
+// individual website item page
+Router.route("/website/:_id", function() {
+  //console.log("you hit /website  " + this.params._id);
+  Session.set("website_id", this.params._id);
+  this.render("navbar", {
+    to: "header"
+  });
+  this.render("websitedetail", {
+    to: "main"
+  });
+});
