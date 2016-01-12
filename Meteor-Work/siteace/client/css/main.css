@@ -27,6 +27,16 @@
   padding: 0px 0px 0px 0px;
 }
 
+.topfive-list {
+  font-style: italic;
+  font-weight: lighter;
+  /*color: lightgrey;*/
+}
+
+.topfive-label {
+  font-weight: lighter;
+}
+
 .vote-label {
   padding-right: 30px;
 }

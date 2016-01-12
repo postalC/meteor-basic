@@ -34,6 +34,18 @@ Template.websiteform.events({
             event.target.url.value = "";
             event.target.title.value = "";
             event.target.description.value = "";
+            Meteor.call("getAll",
+              function(err, result) {
+                if (err) { // error
+                  console.log("[ERROR]: getAll, " + err);
+                } else {
+                  if (result) {
+                    Session.set("resultAll", result);
+                  } else {
+                    console.log("[ERROR]: getAll not found.");
+                  }
+                }
+              });
             $("#addModal").modal("hide");
           } else {
             console.log("[ERROR]: saveWebsite, website not saved.");

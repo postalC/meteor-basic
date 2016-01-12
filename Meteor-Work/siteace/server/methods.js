@@ -13,6 +13,15 @@ Meteor.methods({
     }).fetch();
     return result;
   },
+  // -- Get All --
+  getAll: function() {
+    var result = Websites.find({}, {
+      sort: {
+        voteUp: -1
+      }
+    }).fetch();
+    return result;
+  },
   // -- Save WebSite --
   saveWebsite: function(inUrl, inTitle, inDesc) {
     if (!this.userId) { // not logged in
