@@ -17,11 +17,9 @@ Template.websiteform.events({
       title = url;
     }
     var desc = event.target.description.value;
-    console.log(
-      "[INFO] URL: " + url);
-    console.log("[INFO] Title: " + title);
-    console
-      .log("[INFO] Description: " + desc);
+    // console.log("[INFO] URL: " + url);
+    // console.log("[INFO] Title: " + title);
+    // console.log("[INFO] Description: " + desc);
     // -- Save WebSite --
     Meteor.call("saveWebsite", url, title, desc,
       function(err, saved) {
@@ -34,18 +32,7 @@ Template.websiteform.events({
             event.target.url.value = "";
             event.target.title.value = "";
             event.target.description.value = "";
-            Meteor.call("getAll",
-              function(err, result) {
-                if (err) { // error
-                  console.log("[ERROR]: getAll, " + err);
-                } else {
-                  if (result) {
-                    Session.set("resultAll", result);
-                  } else {
-                    console.log("[ERROR]: getAll not found.");
-                  }
-                }
-              });
+            getAll();
             $("#addModal").modal("hide");
           } else {
             console.log("[ERROR]: saveWebsite, website not saved.");
