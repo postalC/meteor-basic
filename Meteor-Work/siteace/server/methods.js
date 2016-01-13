@@ -91,6 +91,22 @@ Meteor.methods({
       return update;
     }
   },
+  getSiteInfo: function(url) {
+    if (!this.userId) { // not logged in
+      return;
+    } else {
+      var title, description, response = HTTP.get(url);
+      if (response.statusCode === 200) {
+        var $ = cheerio.load(response.content);
+        title = $('title').text() || "";
+        description = $('meta[name=description]').attr("content") || "";
+      }
+      return {
+        title: title,
+        description: description
+      };
+    }
+  },
   // -- Save WebSite --
   saveWebsite: function(inUrl, inTitle, inDesc) {
     if (!this.userId) { // not logged in

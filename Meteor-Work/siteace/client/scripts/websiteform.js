@@ -7,6 +7,19 @@ Template.websiteform.events({
   "click .js-website-modal": function(event) {
     $("#addModal").modal("show");
   },
+  "blur input#url" : function (event) {
+    var url = $('input#url').val();
+    if (url.match(/^http/)) {
+      Meteor.call('getSiteInfo', url, function (err, result){
+        var currentValue = $('input#title').val()
+        if (result && result.title) {
+          $('input#title').val(result.title);
+          $('input#description').val(result.description);
+        }
+      });
+    }
+    return false;
+  },
   "submit .js-website-save": function(event) {
     // stop the form from triggering a page reload
     event.preventDefault();
