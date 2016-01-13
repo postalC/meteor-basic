@@ -2,17 +2,32 @@
 <template name="contentpage">
   <div class="row row-content">
     <div class="col-xs-8 col-sm-6">
-      {{#with loginUser}}
-      <h3 class="welcome-title">Welcome Back
-        <em>{{username}}</em>
-      </h3>
-      {{/with}} {{> websiteform}}
+      {{#if search}}
+        <h3 class="welcome-title">Search Result List:</h3>
+        <br>
+        <p>
+          Search by: <strong>{{ getSearchValue }}</strong>
+          <br>
+          Number of result: <strong>{{ getSearchResultCount }}</strong>
+        </p>
+      {{else}}
+        {{#with loginUser}}
+        <h3 class="welcome-title">Welcome Back
+          <em>{{username}}</em>
+        </h3>
+        {{/with}}
+        {{> websiteform}}
+     {{/if}}
     </div>
     <div class="col-xs-4 col-sm-6">
       {{> searchform}}
     </div>
   </div>
   <div class="row row-content">
-    {{> websitelist}}
+    {{#if search}}
+      {{> searchlist}}
+    {{ else }}
+      {{> websitelist}}
+    {{/if}}
   </div>
 </template>

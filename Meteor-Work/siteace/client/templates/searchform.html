@@ -1,13 +1,15 @@
 <!-- template that displays search form -->
 <template name="searchform">
-  <form class="form-inline pull-right js-website-search" role="search">
+  <form class="form-inline pull-right js-website-search" role="form">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Search..." value="{{searchTerm}}" id="search">
+      <input type="text" class="form-control" id="searchValue" placeholder="Search..." >
     </div>
-    <button type="submit" class="btn btn-primary btn-sm">
-      <strong>
-        <em> Search</em>
-      </strong>
-    </button>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-sm">
+        <strong>
+          <em> Search</em>
+        </strong>
+      </button>
+    </div>
   </form>
 </template>

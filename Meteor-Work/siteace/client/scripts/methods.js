@@ -32,6 +32,23 @@ getAll = function() {
     });
 }
 
+// -- Search Text --
+searchText = function(searchValue) {
+  Meteor.call("searchText", searchValue,
+    function(err, result) {
+      if (err) { // error
+        console.log("[ERROR]: searchText, " + err);
+      } else {
+        if (result) {
+          //console.log("Search Result: ", result.length);
+          Session.set("resultSearch", result);
+        } else {
+          console.log("[ERROR]: searchText not found.");
+        }
+      }
+    });
+}
+
 // -- Get Particular Website by Id --
 getWebSite = function(website_id) {
   Meteor.call("getWebSite", website_id,

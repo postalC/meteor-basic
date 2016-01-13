@@ -24,6 +24,27 @@ Meteor.methods({
       return result;
     }
   },
+  // -- Search Text --
+  searchText: function(searchValue) {
+    // -- if Search Term is empty --
+    if (!searchValue) {
+      var result = Websites.find({}, {
+        sort: {
+          voteUp: -1
+        }
+      }).fetch();
+      return result;
+    }
+    // -- Perform Search from indexing --
+    //console.log("Searching for ", searchValue);
+    var cursor = Websites.find({
+      $text: {
+        $search: searchValue
+      }
+    }).fetch();
+    //console.log("Search Result: ", cursor);
+    return cursor;
+  },
   // -- Get User Name by Id --
   getUsername: function(id) {
     if (this.userId) { // we have a user

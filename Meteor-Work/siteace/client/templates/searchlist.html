@@ -1,0 +1,10 @@
+<!-- template that displays website search result -->
+<template name="searchlist">
+  <div class="col-sm-10">
+    <ol>
+      {{#each websearch}}
+        {{>websiteitem}}
+      {{/each}}
+    </ol>
+  </div>
+</template>

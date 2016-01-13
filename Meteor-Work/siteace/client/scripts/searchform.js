@@ -1,8 +1,12 @@
 Template.searchform.events({
-  "click .js-website-modal": function(event) {
-    e.preventDefault();
-    var searchterm = event.target.search.value;
-    //FlowRouter.go('/search/' + q);
-    return false;
+  "click .js-website-search": function(event) {
+    event.preventDefault();
+    var searchValue = $("#searchValue").val();
+    if (searchValue) {
+      Session.set("searchValue", searchValue);
+      searchText(searchValue);
+    } else {
+      Session.set("searchValue", "");
+    }
   }
 });

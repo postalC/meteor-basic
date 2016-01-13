@@ -6,6 +6,7 @@ Router.configure({
 // specify the top level route, the page users see when they arrive at the site
 Router.route('/', function() {
   //console.log("rendering root /");
+  Session.set("searchValue", "");
   var route = this;
   route.render("navbar", {
     to: "header"
@@ -24,6 +25,7 @@ Router.route('/', function() {
 
 // individual website item page
 Router.route("/website/:_id", function() {
+  Session.set("searchValue", "");
   //console.log("you hit /website  " + this.params._id);
   Session.set("website_id", this.params._id);
   this.render("navbar", {
