@@ -7,7 +7,7 @@ Template.websiteform.events({
   "click .js-website-modal": function(event) {
     $("#addModal").modal("show");
   },
-  "blur input#url" : function (event) {
+  "click .js-website-pull" : function (event) {
     var url = $('input#url').val();
     if (url.match(/^http/)) {
       Meteor.call('getSiteInfo', url, function (err, result){

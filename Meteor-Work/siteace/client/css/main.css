@@ -1,46 +1,42 @@
 /* CSS declarations go here */
+
 .navbar-default {
   background-color: #F8F8F8;
   border-color: #E7E7E7;
 }
 
 /* title */
+
 .navbar-default .navbar-brand {
   color: #7986CB;
 }
-
 .jumbotron {
   padding: 30px 30px 30px 30px;
   margin: 0px auto;
   background: #7986CB;
   color: floralwhite;
 }
-
 .row-content {
-    margin:0px auto;
-    padding: 20px 0px 20px 0px;
-    border-bottom: 1px ridge;
+  margin: 0px auto;
+  padding: 20px 0px 20px 0px;
+  border-bottom: 1px ridge;
 }
-
 .welcome-title {
-  margin:0px auto;
+  margin: 0px auto;
   padding: 0px 0px 0px 0px;
 }
-
 .topfive-list {
   font-style: italic;
   font-weight: lighter;
   /*color: lightgrey;*/
 }
-
 .topfive-label {
   font-weight: lighter;
 }
-
-.vote-label {
-  padding-right: 30px;
+.row-content {
+  padding: 5px 0px 5px 0px;
+  border-bottom: none;
 }
-
-.hidden_div{
-	display:none;
+.hidden_div {
+  display: none;
 }
