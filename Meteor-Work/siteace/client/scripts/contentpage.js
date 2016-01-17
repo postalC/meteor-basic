@@ -6,7 +6,7 @@ Template.contentpage.helpers({
     });
   },
   search: function() {
-    if (Session.get("searchValue")){
+    if (Session.get("searchValue")) {
       return true;
     };
     return false;
@@ -15,6 +15,18 @@ Template.contentpage.helpers({
     return Session.get("searchValue");
   },
   getSearchResultCount: function() {
-    return Session.get("resultSearch").length;
-  },  
+    if (Session.get("resultSearch")) {
+      return Session.get("resultSearch").length;
+    };
+    return 0;
+  },
+});
+
+// -- Event --
+Template.contentpage.events({
+  "click .js-search-back": function(event) {
+    event.preventDefault();
+    $("#searchValue")[0].value = "";
+    Session.set("searchValue", "");
+  }
 });

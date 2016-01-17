@@ -18,15 +18,30 @@ getTopFive = function() {
 
 // -- Get All --
 getAll = function() {
-  Meteor.call("getAll",
+    Meteor.call("getAll",
+      function(err, result) {
+        if (err) { // error
+          console.log("[ERROR]: getAll, " + err);
+        } else {
+          if (result) {
+            Session.set("resultAll", result);
+          } else {
+            console.log("[ERROR]: getAll not found.");
+          }
+        }
+      });
+  }
+  // -- Get Recommeded --
+getRecommended = function() {
+  Meteor.call("getRecommended",
     function(err, result) {
       if (err) { // error
-        console.log("[ERROR]: getAll, " + err);
+        console.log("[ERROR]: getRecommended, " + err);
       } else {
         if (result) {
-          Session.set("resultAll", result);
+          Session.set("resultRecommended", result);
         } else {
-          console.log("[ERROR]: getAll not found.");
+          console.log("[ERROR]: getRecommended not found.");
         }
       }
     });

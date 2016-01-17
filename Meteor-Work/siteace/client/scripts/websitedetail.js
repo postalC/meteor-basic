@@ -12,6 +12,15 @@ Template.websitedetail.helpers({
       return Session.get("resultDetailsOwnerName");
     }
   },
+  commentuser: function(user_id) {
+    user = Meteor.users.findOne({
+      _id: user_id
+    });
+    if (user && user.username) {
+      return user.username;
+    }
+    return;
+  },
 });
 
 // -- event function for websites details  --

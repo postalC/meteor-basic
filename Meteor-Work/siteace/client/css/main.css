@@ -16,11 +16,7 @@
   background: #7986CB;
   color: floralwhite;
 }
-.row-content {
-  margin: 0px auto;
-  padding: 20px 0px 20px 0px;
-  border-bottom: 1px ridge;
-}
+
 .welcome-title {
   margin: 0px auto;
   padding: 0px 0px 0px 0px;
@@ -34,9 +30,10 @@
   font-weight: lighter;
 }
 .row-content {
-  padding: 5px 0px 5px 0px;
+  padding: 5px 5px 5px 5px;
   border-bottom: none;
 }
+
 .hidden_div {
   display: none;
 }

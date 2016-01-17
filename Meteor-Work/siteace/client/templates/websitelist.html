@@ -1,10 +1,23 @@
 <!-- template that displays several website items -->
 <template name="websitelist">
   <div class="col-sm-10">
-    <ol class="list-group">
-      {{#each websites}}
-        {{>websiteitem}}
-      {{/each}}
-    </ol>
+    <ul class="nav nav-pills" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#all" aria-controls="home" role="tab" data-toggle="tab">All</a></li>
+      <li role="presentation"><a href="#recommend" aria-controls="recommend" role="tab" data-toggle="tab">Recommended</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane fade in active" id="all">
+        <ol class="list-group">
+          {{#each websites}} {{>websiteitem}} {{/each}}
+        </ol>
+      </div>
+      <div role="tabpanel" class="tab-pane fade in" id="recommend">
+        <ol class="list-group">
+          {{#each recommend}} {{>websiteitem}} {{/each}}
+        </ol>
+      </div>
+    </div>
   </div>
 </template>

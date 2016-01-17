@@ -28,10 +28,17 @@ Router.route("/website/:_id", function() {
   Session.set("searchValue", "");
   //console.log("you hit /website  " + this.params._id);
   Session.set("website_id", this.params._id);
+  var route = this;
   this.render("navbar", {
     to: "header"
   });
   this.render("websitedetail", {
     to: "main"
   });
+  // -- Check if user login --
+  if (!Meteor.user()) {
+    route.render("landingpage", {
+      to: "main"
+    });
+  }
 });

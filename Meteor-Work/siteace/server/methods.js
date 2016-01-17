@@ -24,6 +24,42 @@ Meteor.methods({
       return result;
     }
   },
+  // -- Get Recommeded --
+  getRecommended: function() {
+    if (this.userId) { // we have a user
+      // -- Check existing comment --
+      var commentb4 = Websites.find({
+        "comments.commentedBy": this.userId
+      }, {
+        fields: {
+          "title": 1,
+          "description": 1,
+          "_id": 0
+        }
+      }).fetch();
+
+      // -- Search based on existing comment --
+      if (commentb4 && commentb4.length >= 1) {
+        var searchterm = "coursera";
+        commentb4.forEach(function(row) {
+          searchterm = searchterm.concat(" ").concat(row.title);
+          searchterm = searchterm.concat(" ").concat(row.description);
+        });
+        //console.log("here " + searchterm);
+        return Meteor.call("searchText", searchterm);
+      }
+
+      // -- Default return something --
+      var result = Websites.find({}, {
+        skip: 0,
+        limit: 3,
+        sort: {
+          voteUp: -1
+        }
+      }).fetch();
+      return result;
+    }
+  },
   // -- Search Text --
   searchText: function(searchValue) {
     // -- if Search Term is empty --
@@ -41,7 +77,7 @@ Meteor.methods({
       $text: {
         $search: searchValue
       }
-    },{
+    }, {
       // `fields` is where we can add MongoDB projections. Here we're causing
       // each document published to include a property named `score`, which
       // contains the document's search rank, a numerical value, with more
@@ -90,8 +126,8 @@ Meteor.methods({
         var comment = {
           title: inTitle,
           details: inDetail,
-          createdBy: this.userId,
-          createdOn: new Date()
+          commentedBy: this.userId,
+          comentedOn: new Date()
         };
         result.comments.push(comment);
         // update the website object in the database.

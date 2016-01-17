@@ -4,4 +4,8 @@ Template.websitelist.helpers({
     getAll();
     return Session.get("resultAll");
   },
+  recommend: function() {
+    getRecommended();
+    return Session.get("resultRecommended");
+  },
 });
