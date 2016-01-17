@@ -8,7 +8,8 @@ Meteor.methods({
       skip: 0,
       limit: 5,
       sort: {
-        voteUp: -1
+        voteUp: -1,
+        voteDown: 1
       }
     }).fetch();
     return result;
@@ -18,7 +19,8 @@ Meteor.methods({
     if (this.userId) { // we have a user
       var result = Websites.find({}, {
         sort: {
-          voteUp: -1
+          voteUp: -1,
+          voteDown: 1
         }
       }).fetch();
       return result;
@@ -54,7 +56,8 @@ Meteor.methods({
         skip: 0,
         limit: 3,
         sort: {
-          voteUp: -1
+          voteUp: -1,
+          voteDown: 1
         }
       }).fetch();
       return result;
