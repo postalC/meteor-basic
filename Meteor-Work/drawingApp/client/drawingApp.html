@@ -1,0 +1,86 @@
+<head>
+  <title>1-wall</title>
+</head>
+
+<body>
+  {{> header}}
+  {{> wall}}
+</body>
+<template name="header">
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        Drawing App
+      </a>
+    </div>
+  </div>
+</nav>
+</template>
+
+<template name="wall">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+       <h2> Draw what's on your mind</h2>
+      <div class="frame">
+      {{> canvas}}
+      <button class='clear btn btn-lg btn-danger btn-block'>CLEAR</button>
+    </div>
+    </div>
+
+
+      <h2>Toolbox</h2>
+    <div class="col-xs-4 toolbox">
+      <h4>Thickness</h4>
+        <div id="slider"></div>
+        
+        Brush size : {{sliderVal}}
+        <hr/>
+
+  <div class="colors">
+    <h4>Pick your color</h4>
+    <div class="row">
+      <div class="col-sm-2 color-picked-wrapper">
+        <div class="color-picked">
+      </div>
+      </div>
+      <div class="col-sm-10">
+    <div style="text-align:right">
+      <button class='white btn  btn-default' style="background-color:#FFFFFF"> &nbsp;</button>
+      <button class='silver  btn btn-default' style="background-color:#C0C0C0"> &nbsp;</button>
+      <button class='gray btn btn-default' style="background-color:#808080"> &nbsp;</button>
+      <button class='black btn  btn-default' style="background-color:#000000"> &nbsp;</button>
+      <button class='red btn  btn-default' style="background-color:#FF0000"> &nbsp;</button>
+      <button class='brown btn btn-default' style="background-color:#800000"> &nbsp;</button>
+      <button class='yellow btn btn-default' style="background-color:#FFFF00">&nbsp; </button>
+      <button class='olive btn btn-default' style="background-color:#808000">&nbsp; </button>
+    </div>
+    <div style="text-align:right">
+      <button class='lime btn btn-default' style="background-color:#00FF00"> &nbsp;</button>
+      <button class='green btn btn-default' style="background-color:#008000">&nbsp; </button>
+      <button class='aqua btn btn-default' style="background-color:#00FFFF"> &nbsp;</button>
+      <button class='teal btn btn-default' style="background-color:#008080">&nbsp; </button>
+      <button class='blue btn btn-default' style="background-color:#0000FF">&nbsp; </button>
+      <button class='navy btn btn-default' style="background-color:#000080">&nbsp; </button>
+      <button class='fushia btn btn-default' style="background-color:#FF00FF">&nbsp; </button>
+      <button class='purple btn btn-default' style="background-color:#800080">&nbsp; </button>
+</div>
+</div>
+</div>
+  </div>
+  <hr/>
+  <div class="save-work-wrapper">
+    <h4>Export your drawing </h4>
+    <button class="btn btn-lg btn-block btn-primary save-work"><span class=" glyphicon glyphicon-floppy-save"></span> </button>
+  </div>
+  <hr/>
+
+    </div> <!--/ col xs 4 -->
+  </div> <!-- /row -->
+</div> <!--/ container -->
+</template>
+
+<template name="canvas">
+  <div id='canvas'></div>
+</template>

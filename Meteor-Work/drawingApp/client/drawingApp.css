@@ -1,0 +1,32 @@
+.frame {
+	background-color:#FFFAFA;
+	border-radius: 6px;
+}
+body{
+	background-color: #7f7fbf;
+}
+.toolbox{
+	background-color:#FFFAFA;
+	border-radius: 6px;
+}
+h2{
+	color:white;
+	text-shadow:-1px 1px #000000,1px 1px #000000,-1px -1px #000000,1px -1px #@000000;
+}
+
+.colors button {
+	margin:3px 1px;
+}
+.color-picked{
+	width:100%;
+	height:100%;
+	border-radius: 3px;
+	margin-right: -15px;
+}
+.color-picked-wrapper{
+	padding-right: 0px
+}
+.export{
+	text-align: center;
+	margin-top: 10px
+}
